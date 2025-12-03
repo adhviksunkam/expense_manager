@@ -29,11 +29,11 @@ class ViewExpenseFrame(tk.Frame):
         tk.Button(btn_frame, text="Delete Selected", command=self.delete_selected, bg="#e74c3c", fg="white").pack(side=tk.LEFT, padx=5)
 
         # --- Analysis Section (Income & Savings) ---
-        analysis_frame = tk.LabelFrame(self, text="Monthly Analysis", bg="#f0f0f0", font=("Arial", 10, "bold"))
+        analysis_frame = tk.LabelFrame(self, text="Annual Analysis", bg="#f0f0f0", font=("Arial", 10, "bold"))
         analysis_frame.pack(pady=10, padx=20, fill="x")
 
         # Income Input
-        tk.Label(analysis_frame, text="Enter Monthly Income:", bg="#f0f0f0").grid(row=0, column=0, padx=10, pady=5)
+        tk.Label(analysis_frame, text="Enter Annual Income:", bg="#f0f0f0").grid(row=0, column=0, padx=10, pady=5)
         self.entry_income = tk.Entry(analysis_frame, width=15)
         self.entry_income.grid(row=0, column=1, padx=10, pady=5)
         
@@ -48,7 +48,7 @@ class ViewExpenseFrame(tk.Frame):
         self.lbl_savings.grid(row=1, column=1, padx=10, pady=5)
 
         # Graph Button
-        tk.Button(self, text="Show Expense Graph", command=self.show_graph, bg="#9C27B0", fg="white", font=("Arial", 12)).pack(pady=10)
+        tk.Button(self, text="Show Expense Chart", command=self.show_graph, bg="#9C27B0", fg="white", font=("Arial", 12)).pack(pady=10)
 
         # Back Button
         tk.Button(self, text="Back to Home", command=lambda: controller.show_frame("HomeFrame")).pack(pady=5)
@@ -128,4 +128,5 @@ class ViewExpenseFrame(tk.Frame):
 
     def tkraise(self, aboveThis=None):
         self.load_data()
+
         super().tkraise(aboveThis)
